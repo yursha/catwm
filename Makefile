@@ -1,7 +1,7 @@
 CFLAGS+= -Wall
 LDADD+= -lX11 
 LDFLAGS=
-EXEC=catwm
+EXEC=janus
 
 PREFIX?= /usr
 BINDIR?= $(PREFIX)/bin
@@ -10,11 +10,11 @@ CC=gcc
 
 all: $(EXEC)
 
-catwm: catwm.o
+janus: janus.o
 	$(CC) $(LDFLAGS) -Os -o $@ $+ $(LDADD)
 
 install: all
-	install -Dm 755 catwm $(DESTDIR)$(BINDIR)/catwm
+	install -Dm 755 janus $(DESTDIR)$(BINDIR)/janus
 
 clean:
-	rm -f catwm *.o
+	rm -f janus *.o
